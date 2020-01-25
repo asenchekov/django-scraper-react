@@ -5,7 +5,7 @@
 ### The application should scrape the information for all of the products from https://detence.bg
 ### The data should be visualized in web interface in a table which should have the following columns:
 
-### Website | url | Name of product | Price | SKU | Description of the product
+### Website url | Name of product | Price | SKU | Description of the product
 
 ## Requirements:
 1. The table should have a sorting options on all of the columns.
