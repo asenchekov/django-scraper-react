@@ -7,9 +7,15 @@ const App = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/items')
+    axios.get(`${window.location.href}api/items`)
       .then((res) => setData(res.data));
   }, []);
+
+  const sortByHandler = (sortBy) => {
+    axios.get(`${window.location.href}api/items?sortby=${sortBy}`)
+      .then((res) => setData(res.data));
+    console.log(sortBy);
+  }
 
   let items;
 
@@ -31,12 +37,30 @@ const App = () => {
       <caption>ITEMS</caption>
       <tbody>
         <tr>
-          <th>id</th>
-          <th>url</th>
-          <th>name</th>
-          <th>price</th>
-          <th>sku</th>
-          <th>description</th>
+          <th>
+            <button
+              onClick={() => sortByHandler('id')}>ID</button>
+          </th>
+          <th>
+            <button
+              onClick={() => sortByHandler('url')}>URL</button>
+          </th>
+          <th>
+            <button
+              onClick={() => sortByHandler('name')}>NAME</button>
+          </th>
+          <th>
+            <button
+              onClick={() => sortByHandler('price')}>PRICE</button>
+          </th>
+          <th>
+            <button
+              onClick={() => sortByHandler('sku')}>SKU</button>
+          </th>
+          <th>
+            <button
+              onClick={() => sortByHandler('description')}>DESCRIPTION</button>
+          </th>
         </tr>
         {items}
       </tbody>

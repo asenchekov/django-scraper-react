@@ -4,10 +4,10 @@ from .serializers import ItemSerializer
 
 # Item Viewset
 class ItemViewSet(viewsets.ModelViewSet):
-    # permission_classes = [
-    #     permissions.IsAuthenticated,
-    # ]
     serializer_class = ItemSerializer
-    queryset = Item.objects.all()
-    # def get_queryset(self):
-    #     return self.request.user.item.all()
+    
+    def get_queryset(self):
+        sortby = self.request.query_params.get('sortby', None)
+        if sortby is not None:
+            return Item.objects.order_by(sortby)
+        return Item.objects.all()
