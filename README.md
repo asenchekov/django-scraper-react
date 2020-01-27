@@ -23,16 +23,18 @@ Install dependencies
 
 ```
 $ pipenv install
+$ pipenv shell
+$ cd scraper_react
 ```
 
 Start scraper
 
 ```
-$ cd scraper_react && python manage.py scraper
+$ python manage.py scraper
 ```
 
 Start server
 
 ```
-$ cd scraper_react && python manage.py runserver
+$ python manage.py runserver
 ```
