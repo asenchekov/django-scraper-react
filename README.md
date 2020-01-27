@@ -27,14 +27,17 @@ $ pipenv shell
 $ cd scraper_react
 ```
 
-Start scraper
+Migrate the database
+```
+$ python manage.py migrate
+```
 
+Start scraper
 ```
 $ python manage.py scraper
 ```
 
 Start server
-
 ```
 $ python manage.py runserver
 ```
