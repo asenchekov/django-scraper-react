@@ -33,41 +33,51 @@ const App = () => {
   }
 
   const table = (
-    <table>
-      <caption>ITEMS</caption>
-      <tbody>
-        <tr>
-          <th>
-            <button
-              onClick={() => sortByHandler('id')}>ID</button>
-          </th>
-          <th>
-            <button
-              onClick={() => sortByHandler('url')}>URL</button>
-          </th>
-          <th>
-            <button
-              onClick={() => sortByHandler('name')}>NAME</button>
-          </th>
-          <th>
-            <button
-              onClick={() => sortByHandler('price')}>PRICE</button>
-          </th>
-          <th>
-            <button
-              onClick={() => sortByHandler('sku')}>SKU</button>
-          </th>
-          <th>
-            <button
-              onClick={() => sortByHandler('description')}>DESCRIPTION</button>
-          </th>
-        </tr>
-        {items}
-      </tbody>
-    </table>
+    <div className="table-wrapper">
+      <h2>ITEMS</h2>
+      <table className="fl-table">
+        <thead>
+          <tr>
+            <th>
+              <button
+                onClick={() => sortByHandler('id')}>ID
+              </button>
+            </th>
+            <th>
+              <button
+                onClick={() => sortByHandler('url')}>URL
+              </button>
+            </th>
+            <th>
+              <button
+                onClick={() => sortByHandler('name')}>NAME
+              </button>
+            </th>
+            <th>
+              <button
+                onClick={() => sortByHandler('price')}>PRICE
+              </button>
+            </th>
+            <th>
+              <button
+                onClick={() => sortByHandler('sku')}>SKU
+              </button>
+            </th>
+            <th>
+              <button
+                onClick={() => sortByHandler('description')}>DESCRIPTION
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {items}
+        </tbody>
+      </table>
+    </div>
   );
 
-  return data ? table : <h1>LOADING</h1>
+  return data && table;
 };
 
 ReactDOM.render(<App />, document.getElementById("app"));

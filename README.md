@@ -15,3 +15,24 @@
 5. PostgreSQL 12.1
 6. All of the code should be done in a private repo on GitHub and add us as a
 collaborator with the following email: vladimir.tasev@softador.com
+
+
+## Usage:
+
+Install dependencies
+
+```
+$ pipenv install
+```
+
+Start scraper
+
+```
+$ cd scraper_react && python manage.py scraper
+```
+
+Start server
+
+```
+$ cd scraper_react && python manage.py runserver
+```
