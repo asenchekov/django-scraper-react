@@ -13,8 +13,6 @@
 3. Django 2.2
 4. React.Js
 5. SQLite 3
-6. All of the code should be done in a private repo on GitHub and add us as a
-collaborator with the following email: vladimir.tasev@softador.com
 
 
 ## Usage:
